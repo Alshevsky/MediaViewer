@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> MediaViewer </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <style>
+        .test_css{
+            color: lightgrey;
+            text-align: center;
+            text-decoration: underline blue;
+        }
+        .image{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div style="margin-top: 50px;" class="ui container">
+
+    <h1 class="ui center aligned header green">MediaViewer</h1>
+
+    <form class="ui form" action="{{ url_for('get_image') }}" method="get">
+        <h3 class="test_css">Задайте категории через запятую</h3>
+        <div class="field">
+            <input type="text" name="query" placeholder="Введите название категории"><br>
+        </div>
+        <button class="ui teal basic button" type="submit">Мне повезет!</button>
+    </form>
+    <div class="image">
+        <img src="{{image}}" height=50% width=50% >
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+</body>
+</html>
