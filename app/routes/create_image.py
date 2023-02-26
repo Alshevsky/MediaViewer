@@ -1,5 +1,3 @@
-from typing import List
-
 from fastapi import UploadFile, Response
 from sqlalchemy.orm import Session
 
@@ -11,7 +9,7 @@ from ..actions import add_image_to_csv, write_media_file
 
 
 @app.post("/")
-async def create_image(file: UploadFile, amount_of_shows: int, category_list: List[str] | None) -> Response:
+async def create_image(file: UploadFile, amount_of_shows: int, category_list: list[str] | None) -> Response:
     with Session(engine) as session:
         value_exists = session.query(
             session.query(ImagesInfo).filter(ImagesInfo.title == file.filename).exists()

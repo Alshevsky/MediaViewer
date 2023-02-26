@@ -1,4 +1,3 @@
-from typing import List
 from pydantic import BaseModel
 
 
@@ -9,8 +8,8 @@ class Category(BaseModel):
 class Images(BaseModel):
     title: str
     amount_of_shows: int
-    categories: List[Category] | None
+    categories: list[Category] | None
 
 
 class CategoryList(BaseModel):
-    name: List[str] | None
+    name: list[str] | None

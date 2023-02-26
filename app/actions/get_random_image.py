@@ -1,7 +1,6 @@
 import csv
 import os
 
-from typing import List
 from datetime import datetime
 
 from sqlalchemy.orm import Session
@@ -10,7 +9,7 @@ from database import ImagesInfo, engine
 from ..settings import FILE_CSV_PATH, PLACEHOLDER_IMAGE_NAME, MEDIA_PATH, STATIC_PATH
 
 
-async def get_image_name(category: List[str] | None) -> str:
+async def get_image_name(category: list[str] | None) -> str:
     images_list = None
 
     if os.path.isfile(FILE_CSV_PATH):
