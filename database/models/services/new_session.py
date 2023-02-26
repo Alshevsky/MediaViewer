@@ -42,7 +42,7 @@ def new_session_started():
 
                     data[image_data.title] = row[categories_row_id:]
     # Поскольку при добавлении М2М падала ошибка IntegrityError, БД не могла закоммититься.
-    # Пришлось категории сохранить в отдельной сессии.
+    # Пришлось категории добавлять к изображениям в отдельной сессии.
     with Session(engine) as session:
         for key, value in data.items():
             image: ImagesInfo = session.query(ImagesInfo).filter(ImagesInfo.title == key).first()
