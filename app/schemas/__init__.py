@@ -1,1 +1,1 @@
-from .schemas import Images, Category, CategoryList
+from .schemas import Images, Category, CategoryList  # noqa

@@ -10,7 +10,7 @@ env.read_env(os.path.join(BASE_DIR, ".env"), recurse=True)
 DB_PATH = os.path.join(BASE_DIR, "database", "DB")
 
 # Env Datas
-FILE_CSV_NAME = env.str("FILE_NAME")
+FILE_CSV_NAME = env.str("FILE_NAME", "images_data.csv")
 DB_URL = env.str("DATABASE_URL")
 
 # Main paths
@@ -37,3 +37,7 @@ if not os.path.exists(DIR_TEMPLATES_PATH):
 
 if not os.path.exists(DB_PATH):
     os.makedirs(DB_PATH)
+
+if not os.path.isfile(FILE_CSV_PATH):
+    with open(FILE_CSV_PATH, "w") as file:
+        pass
