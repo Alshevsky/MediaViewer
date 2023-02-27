@@ -14,7 +14,7 @@ def new_session_started():
     image_name_row_id = 0
     image_views_left_row_id = 1
     categories_row_id = 2
-    data: dict[Category: list[str]] = {}
+    data: dict[str: list[str]] = {}
 
     with Session(engine) as session:
         session.query(ImagesInfo).delete()
